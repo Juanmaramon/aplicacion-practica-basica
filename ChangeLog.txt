@@ -1,0 +1,4 @@
+
+20-06-2011 Alberto Alfonso <otreblaosnofla@gmail.com>
+	
+	Se crea este reposotorio que apunta a: https://aplicacion-practica-basica.googlecode.com/svn/trunk/

@@ -1,4 +1,8 @@
 
+29-06-2011 Juan Manuel Ramon Vigo <weezerin@gmail.com>
+	
+	* practica1/*: Creación de la práctica 1 en el repositorio.
+
 20-06-2011 Alberto Alfonso <otreblaosnofla@gmail.com>
 	
 	Se crea este reposotorio que apunta a: https://aplicacion-practica-basica.googlecode.com/svn/trunk/

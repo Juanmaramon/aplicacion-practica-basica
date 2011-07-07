@@ -1,0 +1,57 @@
+/*Esta Clase implementa la interfaz cResource.
+Esta clase es HIJA de cResource (PADRE) y por tanto heredará de ella e 
+implementa las funciones virtuales correspondientes. 
+*/
+
+#ifndef SCENE_H
+#define SCENE_H
+
+#include <string>
+#include <vector>
+#include "../../Utility/Resource.h"
+#include "../../Utility/ResourceHandle.h"
+
+
+//Para poder añadir el prototipo de la función ProcessScene a la definición de esta clase es necesario 
+// añadir una declaración forward de aiScene para poder referenciarla en dicha función: 
+struct aiScene;
+
+class cScene : public cResource
+{
+   public:
+      cScene()                               { mbLoaded = false; }
+ 
+	  //Inicializa una escena desde un fichero indicando su ruta.
+      virtual bool Init( const std::string &lacNameID, const std::string &lacFile );
+
+	  //Libera la escena recorriendo todas las mallas y llamando a los Deinit.
+	  virtual void Deinit();
+
+      //Comprueba si la escena está cargada.
+      virtual bool IsLoaded()  { return mbLoaded; }
+
+      void Update( float lfTimestep );
+
+	  //Renderiza la escena recorriendo todas las mallas y llamando a los Render.
+      void Render();
+
+   private:  
+	    
+      //Extrae la información de la escena (en nuestro caso, se encargará de 
+      // extraer la información de las mallas).
+	  void ProcessScene( const aiScene* lpScene );
+
+	  //Cadena que almacena el nombre del fichero de escena.
+      std::string macFile;
+
+	  //Booleano que indica si la escena está cargada o no.
+      bool mbLoaded;
+
+	  typedef std::vector<cResourceHandle> cResourceHandleList;
+	  //Iterador para recorrer el vector de los manejadores de malla.
+	  typedef cResourceHandleList::iterator cResourceHandleListIt;
+	  //Vector (de tipo cResourceHandleList) que contendrá los manejadores de malla de la escena.
+	  cResourceHandleList mMeshList;
+};
+
+#endif

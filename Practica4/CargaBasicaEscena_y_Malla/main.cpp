@@ -4,13 +4,19 @@
 //  Juan Manuel Ramón Vigo.
 //  Alberto Alfonso Gómez.
 
-//    Práctica 3: Carga Básica de Escena y Malla
+//    Práctica 4: Gestión básica de materiales
 //--------------------------------------------
 /*
-En este tema nos centraremos principalmente en el tratamiento de mallas. El cargador 
-de mallas que utilizaremos es en realidad un cargador de escena por lo que 
-inicialmente tendremos que procesar más información de la necesaria, pero al final 
-merecerá la pena.
+La librería Assimp nos permite cargar la información de la escena, lo cual incluye también materiales. 
+El sistema de materiales de esta librería no es muy potente, por lo que sólo extraeremos las texturas asociadas a 
+cada maya y las renderizaremos. Lo que crearemos en este capítulo es un sistema simple de materiales.
+El sistema de materiales de Assimp no es muy potente, pero expone muchísima 
+información que podemos usar para renderizar la escena. La estructura de escena de 
+Assimp cuenta con un array llamado mMaterials que contiene los materiales que usa la 
+escena. El tamaño de este array no tiene porqué coincidir con el número de mallas, ya 
+que más de una malla puede usar el mismo material. Por sencillez, asumiremos que las 
+texturas asociadas a una escena se encuentran en el mismo directorio que el fichero de 
+la propia escena.
 */
 
 #include <stdio.h>

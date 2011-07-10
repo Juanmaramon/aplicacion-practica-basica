@@ -1,3 +1,7 @@
+10-07-2011 Juan Manuel Ramon Vigo <weezerin@gmail.com>
+	
+	* practica4/*: Creación de la práctica 4 en el repositorio.
+
 06-07-2011 Juan Manuel Ramon Vigo <weezerin@gmail.com>
 	
 	* practica2/*: Creación de la práctica 2 en el repositorio.
